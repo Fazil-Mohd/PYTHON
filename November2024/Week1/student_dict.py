@@ -18,7 +18,7 @@ def get_student_details():
     register_no = input("Enter registration number: ")
     department = input("Enter department: ")
     semester = int(input("Enter semester: "))
-    mark = int(input("Enter Mark: "))
+    
 
     student_details = {
         "name": name,
@@ -26,14 +26,21 @@ def get_student_details():
         "register_no": register_no,
         "department": department,
         "semester": semester,
-        "mark": mark,
+        
     }
-    
-    grade  = cal_grade(mark)
-    student_details['grade'] = grade
     return student_details
 student_info = get_student_details()
-print("student information :",student_info)
-print("After Deleting Roll Number: ")
+print("\nStudent information :",student_info)
+
+mark = int(input("\nEnter mark: "))
+student_info['mark'] = mark
+
+grade  = cal_grade(mark)
+student_info['grade'] = grade
+
+
+print("\nUpdated information :")
+print("\nStudent information :\n",student_info)
+print("\nAfter Deleting Roll Number:\n ")
 new_info = {key: value for key, value in student_info.items() if key != 'roll_no'}
 print(new_info)
