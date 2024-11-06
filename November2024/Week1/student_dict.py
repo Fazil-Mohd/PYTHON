@@ -32,8 +32,8 @@ def get_student_details():
     grade  = cal_grade(mark)
     student_details['grade'] = grade
     return student_details
-
 student_info = get_student_details()
+print("student information :",student_info)
+print("After Deleting Roll Number: ")
 new_info = {key: value for key, value in student_info.items() if key != 'roll_no'}
 print(new_info)
-
