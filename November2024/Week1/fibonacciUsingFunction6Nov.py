@@ -1,4 +1,4 @@
-def fibonacci(n):
+
     if n <= 0:
         print("Please enter a positive integer.")
     else:
@@ -14,4 +14,3 @@ def fibonacci(n):
                 second = result
             print(result)
 
-fibonacci(10)
