@@ -5,7 +5,7 @@ def menu():
     print("3. Check if any value occurs in both lists")
     print("4. Exit")
     return int(input("Enter your choice: "))
-
+ 
 def check_same_length(list1, list2):
     return len(list1) == len(list2)
 
