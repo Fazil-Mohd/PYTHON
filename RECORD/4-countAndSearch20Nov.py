@@ -6,7 +6,6 @@ def search_word(sentence, word):
     return word in sentence.lower().split()
 
 sentence = input("Enter a sentence: ")
-
 word_count = count_words(sentence)
 print("Number of words:", word_count)
 
