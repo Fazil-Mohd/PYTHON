@@ -1,0 +1,13 @@
+# Input the color lists
+color_list1 = input("Enter colors for color_list1 separated by commas: ").split(",")
+color_list2 = input("Enter colors for color_list2 separated by commas: ").split(",")
+
+# Convert to sets and strip whitespace
+color_set1 = {color.strip() for color in color_list1}
+color_set2 = {color.strip() for color in color_list2}
+
+# Find colors in color_list1 not in color_list2
+unique_colors = color_set1 - color_set2
+
+# Display the result
+print("\nColors in color_list1 not in color_list2:", unique_colors)
