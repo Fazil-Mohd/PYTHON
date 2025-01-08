@@ -1,0 +1,18 @@
+def input_dict():
+    n = int(input("Enter the number of key-value pairs: "))
+    result = {}
+    for _ in range(n):
+        key = input("Enter key: ")
+        value = input("Enter value: ")
+        result[key] = value
+    return result
+
+print("Input the dictionary:")
+user_dict = input_dict()
+
+ascending_dict = dict(sorted(user_dict.items()))
+descending_dict = dict(sorted(user_dict.items(), reverse=True))
+
+print("\nOriginal Dictionary:", user_dict)
+print("Sorted in Ascending Order:", ascending_dict)
+print("Sorted in Descending Order:", descending_dict)
