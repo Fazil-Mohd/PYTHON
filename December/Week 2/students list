@@ -1,0 +1,19 @@
+# Create two lists
+mes1 = ["Alice", "Bob", "Charlie"]
+mes2 = ["David", "Eve", "Frank"]
+
+# a) Insert a student at the third position
+new_student = "Grace"
+mes1.insert(2, new_student)  # Inserts at index 2 (third position)
+print("Updated mes1:", mes1)
+
+# b) Search for a student
+search_student = input("Enter the name of the student to search: ")
+if search_student in mes1 or search_student in mes2:
+    print(f"Student {search_student} found!")
+else:
+    print(f"Student {search_student} not found.")
+
+# c) Merge mes1 and mes2 into a new list mes
+mes = mes1 + mes2
+print("Merged list mes:", mes)
