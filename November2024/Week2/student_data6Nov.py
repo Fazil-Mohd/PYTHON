@@ -1,4 +1,4 @@
-def cal_grade(mark):
+def calculate_grade(total_marks):
     if mark >=90:
         return 'A'
     elif mark >=82:
@@ -11,36 +11,30 @@ def cal_grade(mark):
         return 'P'
     else:
         return 'F'
-    
-def get_student_details():
-    name = input("Enter student's name: ")
-    roll_no = int(input("Enter roll number: "))
-    register_no = input("Enter registration number: ")
-    department = input("Enter department: ")
-    semester = int(input("Enter semester: "))
-    
 
-    student_details = {
-        "name": name,
-        "roll_no": roll_no,
-        "register_no": register_no,
-        "department": department,
-        "semester": semester,
-        
-    }
-    return student_details
-student_info = get_student_details()
-print("\nStudent information :",student_info)
+name = input("Enter student's name: ")
+roll_number = int(input("Enter roll number: "))
+register_number = input("Enter register number: ")
+department = input("Enter department: ")
+semester = int(input("Enter semester: "))
 
-mark = int(input("\nEnter mark: "))
-student_info['mark'] = mark
+student_details = {
+    'name': name,
+    'roll_number': roll_number,
+    'register_number': register_number,
+    'department': department,
+    'semester': semester,
+}
+print("Entered student details:", student_details)
 
-grade  = cal_grade(mark)
-student_info['grade'] = grade
+total_marks = int(input("Enter total marks: "))
+student_details['total_marks'] = total_marks
 
+grade = calculate_grade(total_marks)
+student_details['grade'] = grade
 
-print("\nUpdated information :")
-print("\nStudent information :\n",student_info)
-print("\nAfter Deleting Roll Number:\n ")
-new_info = {key: value for key, value in student_info.items() if key != 'roll_no'}
-print(new_info)
+print("\nUpdated student details : ",student_details)
+
+del student_details['roll_number']
+
+print("\nStudent details after rollno deletion: ",student_details)
