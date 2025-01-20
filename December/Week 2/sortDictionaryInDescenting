@@ -1,0 +1,19 @@
+# Program to sort a dictionary by student names in descending order
+def main():
+    student = {}
+    n = int(input("Enter the number of students: "))
+    
+    # Accept key-value pairs from the user
+    for _ in range(n):
+        name = input("Enter student's name: ")
+        mark = int(input(f"Enter marks for {name}: "))
+        student[name] = mark
+
+    # Sort the dictionary by names in descending order
+    sorted_students = dict(sorted(student.items(), key=lambda x: x[0], reverse=True))
+    
+    print("\nDictionary sorted in descending order of student names:")
+    for name, mark in sorted_students.items():
+        print(f"{name}: {mark}")
+
+main()
