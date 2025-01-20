@@ -1,0 +1,10 @@
+# Accept a list of words and return length of longest word. 
+
+# Input words from the user
+words = input("Enter words separated by spaces: ").split()
+
+# Find the longest word
+longest_word = max(words, key=len)
+
+# Display the result
+print(f"The longest word is: {longest_word} with length {len(longest_word)}")
