@@ -5,11 +5,9 @@ created class should have three member functions:
 • reverse_string(): To reverse the string. 
 Depending on the choice, the corresponding member function must be called using the 
 object of the class. The menu options are: 
-a. 
-Check Palindrome 
+a. Check Palindrome 
 b. Count Vowels 
-c. 
-Reverse String 
+c. Reverse String 
 d. Exit  """
 
 class StringOperations:
