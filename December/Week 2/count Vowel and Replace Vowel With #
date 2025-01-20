@@ -1,0 +1,29 @@
+"""Write a Python program to: 
+a) Count the vowels in a given string. 
+b) Replace all vowels in the string with ‘#’."""
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+
+def replace_vowels(s):
+    vowels = "aeiouAEIOU"
+    result = ""
+    for char in s:
+        if char in vowels:
+            result += "#"
+        else:
+            result += char
+    return result
+
+# Example usage
+input_string = "Hello, World!"
+vowel_count = count_vowels(input_string)
+replaced_string = replace_vowels(input_string)
+
+print(f"Original string: {input_string}")
+print(f"Number of vowels: {vowel_count}")
+print(f"String with vowels replaced: {replaced_string}")
