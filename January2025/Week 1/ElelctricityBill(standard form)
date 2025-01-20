@@ -1,0 +1,26 @@
+"""Create a Python class that calculates electricity bill based on units consumed: 
+slab1_rate = 3.50 # Rate for first 100 units 
+slab2_rate = 4.50 # Rate for next 100 units 
+slab3_rate = 6.00 # Rate for units above 200 """
+
+class ElectricityBill:
+    def __init__(self, units):
+        self.units = units
+        self.slab1_rate = 3.50
+        self.slab2_rate = 4.50
+        self.slab3_rate = 6.00
+
+    def calculate_bill(self):
+        if self.units <= 100:
+            bill = self.units * self.slab1_rate
+        elif self.units <= 200:
+            bill = (100 * self.slab1_rate) + ((self.units - 100) * self.slab2_rate)
+        else:
+            bill = (100 * self.slab1_rate) + (100 * self.slab2_rate) + ((self.units - 200) * self.slab3_rate)
+        return bill
+
+# Example usage
+units_consumed = int(input("Enter the number of units consumed: "))
+bill_calculator = ElectricityBill(units_consumed)
+total_bill = bill_calculator.calculate_bill()
+print(f"The total electricity bill for {units_consumed} units is: ₹{total_bill:.2f}")
