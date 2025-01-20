@@ -1,0 +1,27 @@
+#Generate a list of four digit numbers in a given range with all their digits even and the number is a perfect square 
+
+import math
+
+def is_all_even_digits(num):
+    while num > 0:
+        digit = num % 10
+        if digit % 2 != 0:
+            return False
+        num //= 10
+    return True
+
+def find_even_digit_perfect_squares(start, end):
+    result = []
+    for num in range(start, end + 1):
+        if is_all_even_digits(num) and math.isqrt(num) ** 2 == num:
+            result.append(num)
+    return result
+
+# Define the range
+start = 1000
+end = 9999
+
+# Find and print the numbers
+even_digit_perfect_squares = find_even_digit_perfect_squares(start, end)
+print("Four-digit numbers with all even digits and are perfect squares:")
+print(even_digit_perfect_squares)
