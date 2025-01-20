@@ -1,0 +1,68 @@
+"""Write a Python program using OOP concept for the below menu driven program. The 
+created class should have three member functions occurrence (), frequency () , 
+factors().Depending upon the choice, the corresponding member function must be 
+called using the object of the class. From the main program user can select the menu 
+option.(1. Occurrence of word 2. Character frequency 3. Factors 4. Exit). The loop 
+should repeat until the choice is 4. 
+Occurrence: Occurrence of each word in a sentence 
+Character frequency: Count the frequency(occurrence) of characters in a word. 
+Factors: Display the factors of a given number 
+Exit: Exiting from the program """
+
+class MenuDrivenProgram:
+    def __init__(self):
+        pass
+
+    def occurrence(self, sentence):
+        # Count the occurrence of each word in the sentence
+        words = sentence.split()
+        word_count = {}
+        for word in words:
+            word_count[word] = word_count.get(word, 0) + 1
+        print("Word Occurrence:")
+        for word, count in word_count.items():
+            print(f"{word}: {count}")
+
+    def frequency(self, word):
+        # Count the frequency of each character in the word
+        char_count = {}
+        for char in word:
+            char_count[char] = char_count.get(char, 0) + 1
+        print("Character Frequency:")
+        for char, count in char_count.items():
+            print(f"{char}: {count}")
+
+    def factors(self, number):
+        # Display factors of the number
+        print(f"Factors of {number}:")
+        for i in range(1, number + 1):
+            if number % i == 0:
+                print(i, end=" ")
+        print()
+
+def main():
+    program = MenuDrivenProgram()
+    while True:
+        print("\nMenu:")
+        print("1. Occurrence of word")
+        print("2. Character frequency")
+        print("3. Factors")
+        print("4. Exit")
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            sentence = input("Enter a sentence: ")
+            program.occurrence(sentence)
+        elif choice == 2:
+            word = input("Enter a word: ")
+            program.frequency(word)
+        elif choice == 3:
+            number = int(input("Enter a number: "))
+            program.factors(number)
+        elif choice == 4:
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice! Please select a valid option.")
+
+main()
