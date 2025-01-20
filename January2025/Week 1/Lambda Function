@@ -1,0 +1,14 @@
+# Write lambda functions to find area of square, rectangle and triangle. 
+
+area_square = lambda side: side ** 2
+area_rectangle = lambda length, width: length * width
+area_triangle = lambda base, height: 0.5 * base * height
+
+# Area of a square with side length 4
+print(f"Area of square: {area_square(4)}")
+
+# Area of a rectangle with length 5 and width 3
+print(f"Area of rectangle: {area_rectangle(5, 3)}")
+
+# Area of a triangle with base 6 and height 4
+print(f"Area of triangle: {area_triangle(6, 4)}")
