@@ -1,0 +1,29 @@
+#Develop a Python class representing a book with attributes like title, author, and 
+ISBN. Include methods to display book information and update the author's name. 
+Demonstrate the class by creating book objects, modifying author names, and printing 
+book details.Create a class Library with attributes book_name, author, and copies. 
+Write methods to add a book, lend a book, and display available books. 
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+
+    def display_info(self):
+        print(f"Title: {self.title}")
+        print(f"Author: {self.author}")
+        print(f"ISBN: {self.isbn}")
+
+    def update_author(self, new_author):
+        self.author = new_author
+# Creating book objects
+book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565")
+book2 = Book("1984", "George Orwell", "9780451524935")
+
+# Displaying book information
+book1.display_info()
+book2.display_info()
+
+# Updating author name
+book1.update_author("Francis Scott Fitzgerald")
+book1.display_info()
