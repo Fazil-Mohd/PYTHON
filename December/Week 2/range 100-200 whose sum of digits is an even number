@@ -1,0 +1,15 @@
+#Write a Python program to display all integers within the range 100-200 whose sum of digits is an even number.
+
+def is_sum_of_digits_even(number):
+    digit_sum = sum(int(digit) for digit in str(number))
+    return digit_sum % 2 == 0
+
+def main():
+    print("Integers within the range 100-200 whose sum of digits is an even number:")
+    n=int(input("enter starting number: "))
+    m=int(input("enter ending number: "))
+    for num in range(n, m+1):
+        if is_sum_of_digits_even(num):
+            print(num, end=" ")
+
+main()
