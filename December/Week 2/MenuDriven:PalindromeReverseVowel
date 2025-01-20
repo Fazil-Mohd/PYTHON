@@ -1,0 +1,63 @@
+"""Write a Python program using OOP concepts for the below menu-driven program. The 
+created class should have three member functions: 
+• is_palindrome(): To check whether a given string is a palindrome. 
+• count_vowels(): To count the number of vowels in a string. 
+• reverse_string(): To reverse the string. 
+Depending on the choice, the corresponding member function must be called using the 
+object of the class. The menu options are: 
+a. 
+Check Palindrome 
+b. Count Vowels 
+c. 
+Reverse String 
+d. Exit  """
+
+class StringOperations:
+    def __init__(self, s):
+        self.s = s
+
+    def is_palindrome(self):
+        s = self.s.replace(" ", "").lower()
+        return s == s[::-1]
+
+    def count_vowels(self):
+        vowels = "aeiouAEIOU"
+        count = 0
+        for char in self.s:
+            if char in vowels:
+                count += 1
+        return count
+
+    def reverse_string(self):
+        return self.s[::-1]
+
+def main():
+    while True:
+        print("\nMenu:")
+        print("1. Check Palindrome")
+        print("2. Count Vowels")
+        print("3. Reverse String")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '4':
+            print("Exiting the program.")
+            break
+
+        string_input = input("Enter a string: ")
+        string_ops = StringOperations(string_input)
+
+        if choice == '1':
+            if string_ops.is_palindrome():
+                print(f"'{string_input}' is a palindrome.")
+            else:
+                print(f"'{string_input}' is not a palindrome.")
+        elif choice == '2':
+            vowel_count = string_ops.count_vowels()
+            print(f"Number of vowels in '{string_input}': {vowel_count}")
+        elif choice == '3':
+            reversed_string = string_ops.reverse_string()
+            print(f"Reversed string: {reversed_string}")
+        else:
+            print("Invalid choice. Please try again.")
+main()
